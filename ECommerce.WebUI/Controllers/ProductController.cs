@@ -99,5 +99,81 @@ namespace ECommerce.WebUI.Controllers
                 return View();
             }
         }
+
+        // GET: ProductController/SortAtoZ
+        public async Task<ActionResult> SortAtoZ(int page = 1, int category = 0)
+        {
+            var items = await _productService.GetAllByCategoryAsync(category);
+            items = items.OrderBy(p => p.ProductName).ToList();
+
+            int pageSize = 10;
+            var model = new ProductListViewModel
+            {
+                Products = items.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page,
+                PageCount = (int)Math.Ceiling(items.Count / (double)pageSize)
+            };
+            return View("Index", model);
+        }
+
+        // GET: ProductController/SortZtoA
+        public async Task<ActionResult> SortZtoA(int page = 1, int category = 0)
+        {
+            var items = await _productService.GetAllByCategoryAsync(category);
+            items = items.OrderByDescending(p => p.ProductName).ToList();
+
+            int pageSize = 10;
+            var model = new ProductListViewModel
+            {
+                Products = items.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page,
+                PageCount = (int)Math.Ceiling(items.Count / (double)pageSize)
+            };
+            return View("Index", model);
+        }
+
+        // GET: ProductController/SortPriceHighToLow
+        public async Task<ActionResult> SortPriceHighToLow(int page = 1, int category = 0)
+        {
+            var items = await _productService.GetAllByCategoryAsync(category);
+            items = items.OrderByDescending(p => p.UnitPrice).ToList();
+
+            int pageSize = 10;
+            var model = new ProductListViewModel
+            {
+                Products = items.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page,
+                PageCount = (int)Math.Ceiling(items.Count / (double)pageSize)
+            };
+            return View("Index", model);
+        }
+
+        // GET: ProductController/SortPriceLowToHigh
+        public async Task<ActionResult> SortPriceLowToHigh(int page = 1, int category = 0)
+        {
+            var items = await _productService.GetAllByCategoryAsync(category);
+            items = items.OrderBy(p => p.UnitPrice).ToList();
+
+            int pageSize = 10;
+            var model = new ProductListViewModel
+            {
+                Products = items.Skip((page - 1) * pageSize).Take(pageSize).ToList(),
+                PageSize = pageSize,
+                CurrentCategory = category,
+                CurrentPage = page,
+                PageCount = (int)Math.Ceiling(items.Count / (double)pageSize)
+            };
+            return View("Index", model);
+        }
+
+
+
+
     }
 }

@@ -1,4 +1,15 @@
 ﻿@model ProductListViewModel
+
+<div class="btn-group">
+    <!-- All Categories Button -->
+    <a asp-action="Index" asp-route-page="1" asp-route-category="0" class="btn btn-secondary">All Categories</a>
+
+    <a asp-action="SortAtoZ" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-primary">A-Z</a>
+    <a asp-action="SortZtoA" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-primary">Z-A</a>
+    <a asp-action="SortPriceHighToLow" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-primary">Price High to Low</a>
+    <a asp-action="SortPriceLowToHigh" asp-route-page="@Model.CurrentPage" asp-route-category="@Model.CurrentCategory" class="btn btn-primary">Price Low to High</a>
+</div>
+
 @if (Model.Products == null || Model.Products.Count == 0)
 {
     <span class="alert alert-info">No Product Exist</span>

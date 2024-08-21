@@ -1,22 +1,122 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fa;
+    color: #333;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    html {
+        font-size: 16px;
+    }
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    line-height: 1.6;
 }
+
+h1.display-4 {
+    font-size: 3rem;
+    color: #258cfb;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #258cfb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+    a:hover {
+        color: #1c7ae6;
+        text-decoration: underline;
+    }
+
+.btn-group a {
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #258cfb;
+    border-color: #258cfb;
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #1c7ae6;
+        border-color: #1c7ae6;
+    }
+
+.btn-secondary {
+    background-color: #e0e0e0;
+    border-color: #e0e0e0;
+    color: #333;
+}
+
+    .btn-secondary:hover {
+        background-color: #cccccc;
+        border-color: #cccccc;
+    }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.table {
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .table thead th {
+        background-color: #f2f4f7;
+        font-weight: bold;
+        padding: 15px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table tbody tr {
+        transition: background-color 0.3s;
+    }
+
+        .table tbody tr:hover {
+            background-color: #f9fafc;
+        }
+
+    .table tbody td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+.alert-info {
+    background-color: #d9edf7;
+    color: #31708f;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.text-center {
+    padding: 40px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
